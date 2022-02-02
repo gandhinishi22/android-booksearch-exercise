@@ -1,5 +1,6 @@
 package com.codepath.android.booksearch.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -23,6 +24,7 @@ import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -63,6 +65,10 @@ public class BookListActivity extends AppCompatActivity {
                 // Checkpoint #5
                 // Hook up Book Detail View
                 // see https://guides.codepath.org/android/Using-the-RecyclerView#attaching-click-handlers-using-listeners for setting up click listeners
+                Intent i = new Intent(BookListActivity.this,BookDetailActivity.class);
+                Book book = abooks.get(position);
+                i.putExtra("book", Parcels.wrap(book));
+                startActivity(i);
 
                 // Create Intent to start BookDetailActivity
                 // Get Book at the given position
@@ -129,13 +135,16 @@ public class BookListActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_book_list, menu);
         MenuItem searchItem = menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-        searchItem.expandActionView();
-        searchView.requestFocus();
+        //searchItem.expandActionView();
+        //searchView.requestFocus();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                                               @Override
                                               public boolean onQueryTextSubmit(String query) {
                                                   fetchBooks(query);
                                                   searchView.clearFocus();
+                                                  searchView.setIconified(true);
+                                                  searchItem.collapseActionView();
+                                                  BookListActivity.this.setTitle(query);
                                                   return true;
 
                                               }
