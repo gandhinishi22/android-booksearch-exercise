@@ -57,7 +57,7 @@ public class BookDetailActivity extends AppCompatActivity {
         tvAuthor.setText(b.getAuthor());
         String imageURL;
         imageURL = b.getCoverUrl();
-        Glide.with(this).load(imageURL).into(ivBookCover);
+        //Glide.with(this).load(imageURL).into(ivBookCover);
         Glide.with(this).load(imageURL).listener(new RequestListener<Drawable>() {
             @Override
             public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
@@ -134,6 +134,7 @@ public class BookDetailActivity extends AppCompatActivity {
         MenuItem item = menu.findItem(R.id.menu_item_share);
         // Fetch reference to the share action provider
         miShareAction = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+        attachShareIntentAction();
         // Add Share Intent
         // see http://guides.codepath.org/android/Sharing-Content-with-Intents#shareactionprovider
         // (Bonus) Share book title and cover image using the same intent.
