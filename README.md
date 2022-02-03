@@ -38,3 +38,8 @@ This app leverages two third-party libraries:
 
  * [AsyncHttpClient](https://github.com/codepath/AsyncHttpClient) - For asynchronous network requests
  * [Glide](https://github.com/bumptech/glide) - For remote image loading
+
+## Walkthrough
+
+<img src='walkthroughlabd.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
+
