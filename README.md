@@ -41,5 +41,5 @@ This app leverages two third-party libraries:
 
 ## Walkthrough
 
-<img src='walkthroughlabd.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
+<img src='walkthroughlabd.gif' title='Video Walkthrough' width='380' alt='Video Walkthrough' />
 
