@@ -43,3 +43,7 @@ This app leverages two third-party libraries:
 
 <img src='walkthroughlabd.gif' title='Video Walkthrough' width='380' alt='Video Walkthrough' />
 
+The image I selected was saved to my drive and I can send it to my friends.
+<img src='https://github.com/gandhinishi22/android-booksearch-exercise/blob/master/Screenshot%202022-02-03%20102628.png' title='Video Walkthrough' width='380' alt='Video Walkthrough' />
+
+
